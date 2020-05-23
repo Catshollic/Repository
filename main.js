@@ -6,7 +6,7 @@ window.onload=function(){
     //以下を追記
     this.front;
     this.setFront=function(){
-      this.front=`${this.suit}${this.num<10?'0':''}${this.num}.`;
+      this.front=`${this.suit}${this.num<10?'0':''}${this.num}.gif`;
     };
   }
 
