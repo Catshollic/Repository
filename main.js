@@ -7,7 +7,7 @@ window.onload=function(){
   }
   //カード配列作成
   const cards=[];
-  const suits=['s','d','h','c'];
+  const suits=['spade','diamond','heart','club'];
   for(let i=0;i<suits.length;i++){
     for(let j=1;j<=13;j++){
       let card=new Card(suits[i],j);
