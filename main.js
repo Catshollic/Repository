@@ -6,7 +6,7 @@ window.onload=function(){
     //以下を追記
     this.front;
     this.setFront=function(){
-      this.front=`${this.suit}${this.num<10?'0':''}${this.num}.png`;
+      this.front=`${this.suit}${this.num<10?'0':''}${this.num}.`;
     };
   }
 
@@ -29,6 +29,7 @@ window.onload=function(){
       //以下を追記
       td.classList.add('card');
       td.style.backgroundImage=`url(images/${tempCard.front})`;
+      //td.style.backgroundImage=`url(images/${tempCard.front})`;
       //以下をコメントアウト(または削除)
       //td.textContent=`${tempCard.suit}:${tempCard.num}`;
       tr.appendChild(td);
