@@ -42,18 +42,34 @@ window.onload=function(){
       //以下を追記
       td.classList.add('card','back');
       td.onclick=flip;
+      td.num=tempCard.num;
       td.style.backgroundImage=`url(images/${tempCard.front})`;
-
       tr.appendChild(td);
     }
     table.appendChild(tr);
   }
-
-
+  let firstCard=null;
+  let flipTimerId=NaN;
 
 function flip(e){
   let td=e.target;
-  td.classList.toggle('back');
+  if(!td.classList.contains('back') || flipTimerId){
+    return;
+  }
+  td.classList.remove('back');
+  if(firstCard===null){
+    firstCard=td;
+  }else{
+    if(firstCard.num===td.num){
+      firstCard=null;
+    }else{
+      flipTimerId=setTimeout(function(){
+        firstCard.classList.add('back');
+        td.classList.add('back');
+        flipTimerId=NaN;
+        firstCard=null;
+    },1000);
+  }
 }
 }
-
+}
