@@ -10,3 +10,7 @@ td.card{
 	margin:2px;
 	background-size:cover;
 }
+
+td.card.back{
+	background-image:url(./images/card_back.png) !important;
+}

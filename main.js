@@ -20,6 +20,19 @@ window.onload=function(){
       cards.push(card);
     }
   }
+
+  function shuffle(){
+    let i=cards.length;
+    while(i){
+      let index=Math.floor(Math.random()*i--);
+      var temp=cards[index];
+      cards[index]=cards[i];
+      cards[i]=temp;
+      
+    }
+  }
+
+  shuffle();
   const table=document.getElementById('table');
   for(let i=0;i<suits.length;i++){
     let tr=document.createElement('tr');
@@ -27,7 +40,7 @@ window.onload=function(){
       let td=document.createElement('td');
       let tempCard=cards[i*13+j];
       //以下を追記
-      td.classList.add('card');
+      td.classList.add('card','back');
       td.style.backgroundImage=`url(images/${tempCard.front})`;
 
       tr.appendChild(td);
