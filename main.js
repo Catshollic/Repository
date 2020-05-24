@@ -41,10 +41,19 @@ window.onload=function(){
       let tempCard=cards[i*13+j];
       //以下を追記
       td.classList.add('card','back');
+      td.onclick=flip;
       td.style.backgroundImage=`url(images/${tempCard.front})`;
 
       tr.appendChild(td);
     }
     table.appendChild(tr);
   }
+
+
+
+function flip(e){
+  let td=e.target;
+  td.classList.toggle('back');
 }
+}
+
