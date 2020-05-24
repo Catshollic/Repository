@@ -6,12 +6,12 @@ window.onload=function(){
     //以下を追記
     this.front;
     this.setFront=function(){
-      this.front=`${this.suit}${this.num<10?'0':''}${this.num}.gif`;
+      this.front=`card_${this.suit}${this.num<10?'0':''}${this.num}.png`;
     };
   }
 
   const cards=[];
-  const suits=['s','d','h','c'];
+  const suits=['spade_','diamond_','heart_','club_'];
   for(let i=0;i<suits.length;i++){
     for(let j=1;j<=13;j++){
       let card=new Card(suits[i],j);
@@ -29,9 +29,7 @@ window.onload=function(){
       //以下を追記
       td.classList.add('card');
       td.style.backgroundImage=`url(images/${tempCard.front})`;
-      //td.style.backgroundImage=`url(images/${tempCard.front})`;
-      //以下をコメントアウト(または削除)
-      //td.textContent=`${tempCard.suit}:${tempCard.num}`;
+
       tr.appendChild(td);
     }
     table.appendChild(tr);
